@@ -1,0 +1,12 @@
+TODO
+
+# Features
+
+• TODO: Spawn island
+   ◦ TODO: Add a default spawn island
+   ◦ TODO: Add a command to generate player island
+   ◦ TODO: Add `/spawn` to go to spawn island
+• TODO: Add a way to join other islands
+   ◦ TODO: Add a friend-list system in another mod if it doesn’t exist
+   ◦ TODO: Add a player command `/island_join <player_name>`
+
