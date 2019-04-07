@@ -33,28 +33,11 @@ local create_player_spawn = function(player)
 	player:get_meta():set_string("sky_islands_spawn", minetest.serialize(spawn))
 
 	sky_islands.players[player:get_player_name()] = {
-		spawn = spawn
+		spawn = spawn,
+		is_island_generated = false,
 	}
 
 	sky_islands.save_players_data()
-
-	-- Protect player
-	local playername = player:get_player_name()
-	local privs = minetest.get_player_privs(playername)
-	privs.fly = true
-	privs.home = true
-	minetest.set_player_privs(playername, privs)
-
-	-- Generate island
-	minetest.after(4, function()
-		sky_islands.generate_island(spawn, sky_islands.schem)
-
-		-- Stop protecting player
-		local playername = player:get_player_name()
-		local privs = minetest.get_player_privs(playername)
-		privs.fly = nil
-		minetest.set_player_privs(playername, privs)
-	end)
 
 	return spawn
 end
@@ -71,6 +54,8 @@ sky_islands.spawn_player = function(player)
 	else
 		spawn = minetest.deserialize(spawn)
 	end
+
+	sky_islands.generate_island(spawn, sky_islands.schem)
 
 	player:setpos({x = spawn.x, y = spawn.y + 1, z = spawn.z})
 	-- player:set_hp(20)

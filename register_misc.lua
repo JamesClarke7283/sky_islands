@@ -23,14 +23,13 @@ minetest.register_on_respawnplayer(function(player)
 	return true
 end)
 
-local spawn_throttle = 1
 local function spawn_tick()
 	for _, player in ipairs(minetest.get_connected_players()) do
 		if player:getpos().y < sky_islands.world_bottom then
 			sky_islands.spawn_player(player)
 		end
 	end
-	minetest.after(spawn_throttle, spawn_tick)
+	minetest.after(1, spawn_tick)
 end
 
 -- Register globalstep after the server starts

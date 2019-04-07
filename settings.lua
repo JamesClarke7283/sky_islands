@@ -10,9 +10,6 @@
 
 ]]--
 
--- Debug mode
-sky_islands.debug = minetest.setting_getbool('sky_islands.debug')
-
 -- How far apart to set players start positions
 sky_islands.start_gap = tonumber(minetest.setting_get('sky_islands.start_gap')) or 32
 
