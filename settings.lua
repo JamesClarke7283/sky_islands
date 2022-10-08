@@ -23,7 +23,7 @@ sky_islands.world_bottom = tonumber(minetest.setting_get('sky_islands.world_bott
 sky_islands.world_floor = tonumber(minetest.setting_get('sky_islands.world_floor')) or "sky_islands:air"
 
 -- Node to use for the world bottom
-sky_islands.world_bottom_node = minetest.setting_get('sky_islands.world_bottom') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
+sky_islands.world_bottom_node = minetest.setting_get('sky_islands.world_bottom_node') or 'air' -- 'air' || 'default:water_source' || 'default:lava_source'
 
 -- Which schem file to use
 sky_islands.schem = minetest.setting_get('sky_islands.schem') or 'island.schem'
